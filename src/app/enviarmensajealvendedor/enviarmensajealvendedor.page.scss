@@ -1,0 +1,89 @@
+.btn-send{
+    width: 42px;
+    height: 42px;
+    border-radius: 8px 8px 8px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #673BB7 !important;
+    color: aliceblue;
+}
+
+.content_envia{
+    display: flex;
+    align-self: flex-end;
+    justify-content: flex-end;
+    width: 70%;
+    height: auto;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: right;
+    background-color: #663bb7c0 !important;
+    color: aliceblue;
+    border-radius: 20px 20px 0px 20px;
+
+    p{
+        font-size: 14px;
+        font-weight: 200;
+        width: 90%;
+        height: auto;
+    }
+
+}
+
+.content_recibe{
+    display: flex;
+    justify-self: left;
+    width: 70%;
+    height: auto;
+    margin: 10px 10px 10px 10px;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    background-color: #aaaaaa18 !important;
+    color: rgb(66, 66, 66);
+    border-radius: 20px 20px 20px 0px;
+    p{
+        font-size: 14px;
+        font-weight: 200;
+    }
+   
+}
+
+
+.contenedor-mensajes{
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    max-height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+
+.mensaje-emisor {
+    background-color: #DCF8C6;
+    align-self: flex-end; /* Para alinear los mensajes de los emisores a la derecha */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .mensaje-receptor {
+    background-color: #E6E6E6;
+    align-self: flex-start; /* Para alinear los mensajes de los receptores a la izquierda */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+  }
+
+
+#bottomdiv{
+    width: 100%; 
+    height: 10px; 
+    border: 1px solid red; 
+    position: fixed; 
+    bottom: 10px;
+}
+  
+
+

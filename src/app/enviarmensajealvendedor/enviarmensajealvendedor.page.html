@@ -1,0 +1,51 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" #content>
+
+  <ion-list lines="none">
+
+
+
+    <div *ngFor="let mensajes of mensajesDisponible" class="contenedor-mensajes">
+      <div [ngClass]="{'content_envia': mensajes.senderId === adminUser, 'content_recibe': mensajes.senderId !== adminUser}">
+        
+        <!--img src="{{mensajes.avatar}}" alt=""-->
+        
+        <p>{{mensajes.message}}</p>
+       
+      </div>
+      
+    </div>
+    
+
+
+  </ion-list>
+
+ <div id="bottomdiv">
+
+ </div>
+
+</ion-content>
+
+<ion-footer > <!--class="ion-no-border" -->
+  <ion-toolbar color="dark" >
+    <ion-item>
+
+      <ion-textarea 
+        placeholder="...Write your Message" 
+        [autoGrow]="true" 
+        [(ngModel)]="inputText">
+      
+      </ion-textarea>
+      <i class='bx bx-send btn-send' slot="end" (click)="enviarMensaje()"></i>
+    </ion-item>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,20 @@
+.map-container{
+    width: 100%;
+    height: 80%;
+    //border: 1px solid #673BB7 !important;
+}
+
+#map{
+    width: 100%;
+    height: 80%;
+}
+
+capacitor-google-map {
+    display: inline-block;
+    width: 100%;
+    height: 80%;
+}
+
+ion-content {
+    --background: transparent;
+}

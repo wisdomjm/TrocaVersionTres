@@ -1,0 +1,266 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar  color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/tiendaprincipal"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registrar Producto</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <div class="vspace"></div>
+  <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+  </div>
+
+  <h1 class="ion-text-center texto-60" 
+    style="font-weight: 800; font-size: 32px;">
+    Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+  </h1>
+  <div class="vspace"></div>
+
+  <ion-list>
+
+    <ion-input
+      [(ngModel)]="producto.nombre" 
+      color="trocadero" 
+      label="Nombre Producto" 
+      label-placement="stacked" 
+      placeholder="Nombre Producto" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-item>
+      <ion-select label="Selecciona una Categoria" label-placement="stacked" mode="ios" [(ngModel)]="producto.categoria" >
+        <ion-select-option value="Diversion y Recreacion">Diversion y Recreacion</ion-select-option>
+        <ion-select-option value="Regalos">Regalos</ion-select-option>
+        <ion-select-option value="Servicios Educativos">Servicios Educativos</ion-select-option>
+        <ion-select-option value="Agro">Agro</ion-select-option>
+        <ion-select-option value="Alimentos y Bebidas">Alimentos y Bebidas</ion-select-option>
+        <ion-select-option value="Animales y Mascotas">Animales y Mascotas</ion-select-option>
+        <ion-select-option value="Antiguedades y Colecciones">Antiguedades y Colecciones</ion-select-option>
+        <ion-select-option value="Arte y Papeleria">Arte y Papeleria</ion-select-option>
+        <ion-select-option value="Bebes">Bebes</ion-select-option>
+        <ion-select-option value="Belleza y Cuidado Personal">Belleza y Cuidado Personal</ion-select-option>
+        <ion-select-option value="Consolas y Videojuegos">Consolas y Videojuegos</ion-select-option>
+        <ion-select-option value="Deportes y Fitness">Deportes y Fitness</ion-select-option>
+        <ion-select-option value="Instrumentos Musicales">Instrumentos Musicales</ion-select-option>
+        <ion-select-option value="Juegos y Juguetes">Juegos y Juguetes</ion-select-option>
+        <ion-select-option value="Libros, Revistas y Comics">Libros, Revistas y Comics</ion-select-option>
+        <ion-select-option value="Ropa y Accesorios">Ropa y Accesorios</ion-select-option>
+        <ion-select-option value="Salud y Equipamento Medico">Salud y Equipamento Medico</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!--
+      Hola Tavito,
+      manito mio, te cuento lo siguiente estuve mirando el documento de las categorias y
+      las implementaciones que piden no son viables para este proyecto...
+      me explico...
+      la aplicacion es una aplicacion de ventas de productos minoritarios que depende de la informacion 
+      que se registra en la vista de AgregarProductos.. esta misma vista...
+      la cuestion es que la estructura de datos depende de muchas ramificaciones,
+      te explico... el chat depende del id del producto y del usuario, los productos cercanos
+      dependen del id del producto y del usuario, la geolocalizacion y el geofence depende de la latitud
+      y longitud del dispositivo y los permisos del mismo...
+
+      cual es el problema...
+
+      veras la categoria de Restaurante, hoteles, alquiler y donaciones
+      regalos, mascotas tienen caracteristicas que de alguna u otra manera afectan el comportamiento
+      de la aplicacion... por ejemplo, el utilizar calendarios para establecer fechas debe ser un proceso a
+      parte, lo mismo que el de los hoteles, el sistema de reserar tu sabes que es diferente al sistema de
+      implementar una app de compras, simplemente porque la estructura de los datos no va a poder
+      realizar los procesos debidamente, esto a la dependencia entre vistas.
+    -->
+
+
+    <!--En caso de seleccionar estas categorias, habilitar estas otras opciones-->
+
+    <!--RESTAURANTES-->
+
+    <!--HOTELES-->
+
+
+      
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-textarea
+      [(ngModel)]="producto.descripcionCorta"  
+      color="trocadero" 
+      label="Descripcion corta" 
+      label-placement="stacked" 
+      placeholder="Descripcion corta" 
+      type="text" 
+      fill="outline"
+      [counter]="true"
+      [autoGrow]="true"
+      maxlength="200"
+      >
+    </ion-textarea>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-textarea
+      [(ngModel)]="producto.descripcionLarga"  
+      color="trocadero" 
+      label="Descripcion Larga" 
+      label-placement="stacked" 
+      placeholder="Descripcion Larga" 
+      type="text" 
+      fill="outline"
+      [counter]="true"
+      [autoGrow]="true"
+      maxlength="1000"
+      >
+    </ion-textarea>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="producto.precio"  
+      color="trocadero" 
+      label="Precio del Producto" 
+      label-placement="stacked" 
+      placeholder="Precio del Producto" 
+      type="number" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="producto.cantidadDisponible"  
+      color="trocadero" 
+      label="Cantidad Disponible" 
+      label-placement="stacked" 
+      placeholder="Cantidad Disponible" 
+      type="number" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="producto.ciudad"  
+      color="trocadero" 
+      label="Ciudad" 
+      label-placement="stacked" 
+      placeholder="Tu ciudad" 
+      type="string" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="producto.direccion"  
+      color="trocadero" 
+      label="Direccion" 
+      label-placement="stacked" 
+      placeholder="Direccion" 
+      type="string" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+ 
+    <div>
+
+      <ion-label>Cargar Imagen</ion-label>
+      <div class="vspace"></div>
+
+      <img src="{{imagenPrevia}}" alt="" *ngIf="imagenPrevia != null" class="imagenAmostrar">
+      <br>
+      <input  type="file" (change)="seleccionarArchivos($event)" multiple> 
+
+     
+      <ion-button color="trocadero" expand="block" (click)="subirArchivos()">
+        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir Imagenes
+      </ion-button>
+
+    </div>
+
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+    <div class="vspace"></div>
+
+    <div>
+
+      <ion-label>Cargar Video</ion-label>
+      <div class="vspace"></div>
+
+      <video width="640" height="240" controls>
+        <source [src]="videoPrevio" type="video/mp4"  preload="metadata" autoplay="autoplay">
+        Tu navegador no soporta el elemento de video.
+      </video>
+
+      <!--img src="{{videoPrevio}}" *ngIf="videoPrevio != null" alt="" *ngIf="videoPrevio != null" class="imagenAmostrar"-->
+      <br>
+      <input  type="file" (change)="seleccionarVideo($event)" multiple> 
+
+     
+      <ion-button color="trocadero" expand="block" (click)="subirVideo()">
+        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir video
+      </ion-button>
+
+    </div>
+        
+
+
+    <!--ion-grid>
+      <ion-row>
+        <ion-col size="9">
+          <ion-input 
+            type="file" 
+            (change)="seleccionarImagen($event)" 
+            label="Imagen del Producto" 
+            label-placement="floating"> 
+          </ion-input>
+        </ion-col>
+        <ion-col size="3">
+            <ion-button color="trocadero" expand="block" (click)="subirImagen()">
+              <i class='bx bxs-cloud-upload'></i>
+            </ion-button>
+        </ion-col>  
+      </ion-row>
+    </ion-grid-->
+
+    <!-- Upload  -->
+    <!--form id="file-upload-form" class="uploader">
+      <input id="file-upload" type="file" name="fileUpload" accept="image/*" />
+
+      <label for="file-upload" id="file-drag">
+        <img id="file-image" src="#" alt="Preview" class="hidden">
+        <div id="start">
+          <i class="bx bxs-cloud-upload" aria-hidden="true"></i>
+          <div>Select a file or drag here</div>
+          <div id="notimage" class="hidden">Please select an image</div>
+          <span id="file-upload-btn" class="btn btn-primary">Select a file</span>
+        </div>
+        <div id="response" class="hidden">
+          <div id="messages"></div>
+          <progress class="progress" id="file-progress" value="0">
+            <span>0</span>%
+          </progress>
+        </div>
+      </label>
+    </form-->
+
+    
+  </ion-list>
+
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+  <ion-button expand="block" (click)="CrearNuevoproducto()" mode="ios" color="trocadero">Registrar Producto</ion-button>
+</ion-content>

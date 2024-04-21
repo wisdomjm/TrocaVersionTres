@@ -1,0 +1,13 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Productos Cercanos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!--div id="map" style="width: 100%; height: 80%;"></div-->     <!--class="map-container"-->
+  <capacitor-google-map id="map"></capacitor-google-map>
+</ion-content>   

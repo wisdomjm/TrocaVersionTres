@@ -1,0 +1,92 @@
+<ion-content [fullscreen]="true" class="ion-padding" mode="md">
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+  <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+  </div>
+  
+  <div class="vspace"></div>
+  <h1 class="ion-text-center texto-60" 
+    style="font-weight: 800; font-size: 32px;">
+    Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+  </h1>
+
+    <ion-list>
+
+ 
+      <ion-input
+        [(ngModel)]="datosUsuario.nombres"
+        color="trocadero" 
+        label="Nombre" 
+        label-placement="stacked" 
+        placeholder="Nombre" 
+        type="text" 
+        fill="outline"
+        >
+      </ion-input>
+  
+      <div class="vspace"></div> <!--espacio de 24px de alto-->
+  
+      <ion-input
+        [(ngModel)]="datosUsuario.apellidos"
+        color="trocadero" 
+        label="Apellidos" 
+        label-placement="stacked" 
+        placeholder="Apellidos" 
+        type="text" 
+        fill="outline"
+        >
+      </ion-input>
+  
+      <div class="vspace"></div> <!--espacio de 24px de alto-->
+  
+      <ion-input
+        [(ngModel)]="datosUsuario.direccion"
+        color="trocadero" 
+        label="Direccion" 
+        label-placement="stacked" 
+        placeholder="Direccion" 
+        type="text" 
+        fill="outline"
+        >
+      </ion-input>
+  
+
+      <div class="vspace"></div> <!--espacio de 24px de alto-->
+  
+      <ion-input
+        [(ngModel)]="datosUsuario.telefono"
+        color="trocadero" 
+        label="Telefono" 
+        label-placement="stacked" 
+        placeholder="+57 300 000 0000" 
+        type="text" 
+        fill="outline"
+        >
+      </ion-input>
+  
+      <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+      <ion-input
+        [(ngModel)]="datosUsuario.tienda"
+        color="trocadero" 
+        label="Tienda" 
+        label-placement="stacked" 
+        placeholder="Tu nombre de negocio" 
+        type="text" 
+        fill="outline"
+        >
+      </ion-input>
+  
+      
+    </ion-list>
+
+    <ion-button color="trocadero" expand="block" (click)="GuardarInformacion()" mode="ios">
+      Guardar & Iniciar Sesion
+    </ion-button>
+
+
+
+
+
+</ion-content>

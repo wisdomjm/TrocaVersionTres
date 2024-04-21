@@ -1,0 +1,142 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Perfil</ion-title>
+    <ion-avatar slot="end">
+      <img src="{{avatarImagen}}" alt="" style="width: 52px; height: 52px; margin-right: 16px; margin-top: 5px;">  
+    </ion-avatar>
+  </ion-toolbar>
+</ion-header>
+<!--class="ion-padding animate__animated animate__backInDown"-->
+<ion-content [fullscreen]="true" class="ion-padding">
+ 
+  <ion-list>
+
+    <ion-input
+      [(ngModel)]="datosUsuario.displayName"
+      color="trocadero" 
+      label="Nickname" 
+      label-placement="stacked" 
+      placeholder="Nickname" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.uid"
+      color="trocadero" 
+      label="Id Vendedor" 
+      label-placement="stacked" 
+      placeholder="" 
+      type="text" 
+      fill="outline"
+      [disabled]="true"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.nombres"
+      color="trocadero" 
+      label="Nombre" 
+      label-placement="stacked" 
+      placeholder="Nombre" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.apellidos"
+      color="trocadero" 
+      label="Apellidos" 
+      label-placement="stacked" 
+      placeholder="Apellidos" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.direccion"
+      color="trocadero" 
+      label="Direccion" 
+      label-placement="stacked" 
+      placeholder="Direccion" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.email"
+      color="trocadero" 
+      label="Email" 
+      label-placement="stacked" 
+      placeholder="user@email.com" 
+      type="text" 
+      fill="outline"
+      [disabled]="true"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.telefono"
+      color="trocadero" 
+      label="Telefono" 
+      label-placement="stacked" 
+      placeholder="+57 300 000 0000" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="datosUsuario.tienda"
+      color="trocadero" 
+      label="Tienda" 
+      label-placement="stacked" 
+      placeholder="Tienda" 
+      type="text" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+    
+    <div> <!--*ngIf="imagenPrevia != null"-->
+      <img src="{{imagenPrevia}}" alt=""  class="imagenAmostrar">
+      <br>
+      <input  type="file" (change)="seleccionarArchivosImagen($event)" multiple> 
+      <ion-button color="trocadero" expand="block" (click)="subirArchivosImagen()">
+        <i class='bx bxs-cloud-upload' style="font-size: 26px;"></i> Subir Imagenes
+      </ion-button>
+    </div>
+
+    
+  </ion-list>
+  <ion-button 
+    color="trocadero"
+    expand="block" 
+    (click)="ActualizarInformacion()"
+    >
+    Actualizar
+  </ion-button>
+</ion-content>

@@ -1,0 +1,140 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{productoEncontrado.nombre}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" >
+  <!--Imagen Principal-->
+  <div class="image_product animate__animated animate__backInLeft animate__delay-2s" style="border-radius: 8px 8px 8px 8px;">
+    <img src="{{imagenProductoPrincipal}}" alt="">
+  </div>
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button expand="block" mode="ios" color="trocadero">Nueva Imagen</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button expand="block" mode="ios" color="trocadero">Nueva Video</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <br>
+  <!--Todas las Imagenes-->
+  <div class="ion-padding">
+    <swiper-container [slidesPerView]="3.5" [spaceBetween]="20" >  
+      <swiper-slide *ngFor="let imagen of todaslasimagenes">
+        <div style="width: 80px; height: 80px;">
+          <img src="{{imagen}}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px 8px 8px 8px;">
+        </div>
+      </swiper-slide>
+    </swiper-container>
+  </div>
+  <br>
+
+  <ion-list class="ion-padding">
+    <ion-input
+      [(ngModel)]="productoEncontrado.nombre"
+      color="trocadero" 
+      label="Nombre Producto" 
+      label-placement="stacked" 
+      placeholder="" 
+      type="text" 
+      fill="outline"
+    >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-textarea
+      [(ngModel)]="productoEncontrado.descripcionCorta"  
+      color="trocadero" 
+      label="Descripcion corta" 
+      label-placement="stacked" 
+      placeholder="Descripcion corta" 
+      type="text" 
+      fill="outline"
+      [counter]="true"
+      [autoGrow]="true"
+      maxlength="200"
+    >
+    </ion-textarea>
+
+  <div class="vspace"></div>
+
+  <ion-textarea
+      [(ngModel)]="productoEncontrado.descripcionLarga"  
+      color="trocadero" 
+      label="Descripcion Larga" 
+      label-placement="stacked" 
+      placeholder="Descripcion Larga" 
+      type="text" 
+      fill="outline"
+      [counter]="true"
+      [autoGrow]="true"
+      maxlength="1000"
+      >
+    </ion-textarea>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="productoEncontrado.precio"  
+      color="trocadero" 
+      label="Precio del Producto" 
+      label-placement="stacked" 
+      placeholder="Precio del Producto" 
+      type="number" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-input
+      [(ngModel)]="productoEncontrado.cantidadDisponible"  
+      color="trocadero" 
+      label="Cantidad Disponible" 
+      label-placement="stacked" 
+      placeholder="Cantidad Disponible" 
+      type="number" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div>
+
+    <ion-input
+    [(ngModel)]="productoEncontrado.ciudad"  
+    color="trocadero" 
+    label="Ciudad" 
+    label-placement="stacked" 
+    placeholder="Tu ciudad" 
+    type="string" 
+    fill="outline"
+    >
+  </ion-input>
+
+  <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+  <ion-input
+    [(ngModel)]="productoEncontrado.direccion"  
+    color="trocadero" 
+    label="Direccion" 
+    label-placement="stacked" 
+    placeholder="Direccion" 
+    type="string" 
+    fill="outline"
+    >
+  </ion-input>
+
+  <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-button expand="block" (click)="Actaulizarproducto()" mode="ios" color="trocadero">Actualizar</ion-button>
+
+  </ion-list>
+</ion-content>

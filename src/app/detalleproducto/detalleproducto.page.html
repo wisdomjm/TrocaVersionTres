@@ -1,0 +1,108 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{productoEncontrado.nombre}}</ion-title>
+    <i class='bx bx-message-rounded-dots' slot="end" style="font-size: 18px; margin-right: 16px;" [routerLink]="['/enviarmensajealvendedor',productoEncontrado.idVendedor]"></i>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="image_product animate__animated animate__backInLeft animate__delay-2s" style="border-radius: 8px 8px 8px 8px;">
+    <img src="{{imagenProductoPrincipal}}" alt="">
+  </div>
+
+  <!--REPRODUCTOR DE VIDEO NO TOCAR!!!!!-->
+  <video controls [src]="videoPrincipal" type="video/mp4" width="100%" height="240" loop autoplay> </video>
+
+  <swiper-container [slidesPerView]="3.5" [spaceBetween]="20">
+    <swiper-slide *ngFor="let imagen of todaslasimagenes" (click)="CambiarImagenAMostrar(imagen)">
+      <div style="width: 80px; height: 80px;">
+        <img src="{{imagen}}" alt="" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px 8px 8px 8px;">
+      </div>
+    </swiper-slide>
+  </swiper-container>
+
+  <div class="header-producto">
+    <h1 class="nombre-producto">{{productoEncontrado.nombre}}</h1>
+    <ion-icon name="heart-outline" slot="end" class="icon-medium"></ion-icon>
+  </div>
+
+  <p class="comentarios-producto">
+    <ion-icon name="star-half" color="trocadero"></ion-icon> <span> 4.7 (120 comentarios)</span>
+
+    <!--ion-chip [outline]="true" color="medium">
+      <ion-icon name="location-outline"></ion-icon>
+      <ion-label>ver Mapa</ion-label>
+    </ion-chip-->
+
+  </p>
+  <!--capacitor-google-map id="map"></capacitor-google-map-->
+  <!--div id="map" class="map-container"></div-->  
+
+  <h1 class="main-label">Descripcion</h1>
+
+  <p class="descripcion-producto">
+    {{productoEncontrado.descripcionLarga}}
+  </p>
+
+  <h1 class="precio-producto">${{productoEncontrado.precio}}</h1>
+  <br>
+  <div class="cantidad-producto">
+    <h2>Cantidad: 1 <span>({{productoEncontrado.cantidadDisponible}} Disponibles)</span></h2>
+    <ion-icon name="chevron-forward-outline" style="font-size: 22px;"></ion-icon>
+  </div>
+  <br>
+  <br>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="6">
+        <ion-button color="trocadero" expand="block" style="font-size: 10px;" (click)="Comprar()">
+          Comprar Ahora
+        </ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button color="dark" expand="block" fill="outline" style="font-size: 10px;" (click)="AgregarAlCarrito()">
+          Agregar al Carrito
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
+
+  <!--Vendido por-->
+  <br>
+  <!--p class="nombre-vendedor">Vendido por <strong color="trocadero">Shopstore</strong></p-->
+
+  <!--Mas Productos del vendedor-->
+
+  <!--preguntar al vendedor-->
+  <ion-item lines="none">
+    <ion-textarea  label="Dejar un Comentario" labelPlacement="stacked" placeholder="Comentar..." [counter]="true"
+      maxlength="250" [autoGrow]="true" [(ngModel)]="pregunta.mipregunta"></ion-textarea>
+  </ion-item>
+  <br>
+  <ion-button color="trocadero" expand="block" (click)="EnviarPregunta()">Comentar</ion-button>
+
+  <br>
+  <!--Ultimas Preguntas-->
+  <h1 class="main-label" style="font-weight: 400;">Ultimas Preguntas</h1>
+
+
+  <div style="width: 100%; height: auto;">
+    <div *ngFor="let preg of preguntasDelProducto">
+      <p class="preguntas-clientes">
+        <i class='bx bxs-comment-detail' color="trocadero"></i> {{preg.mipregunta}}
+      </p>
+    </div>
+   
+  </div>
+
+
+
+
+</ion-content>

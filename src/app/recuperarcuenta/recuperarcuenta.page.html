@@ -1,0 +1,43 @@
+<ion-header [translucent]="true" class="ion-no-norder">
+  <ion-toolbar color="trocadero">
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div class="vspace"></div>
+  <div class="vspace"></div>
+  <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+  </div>
+  
+  <div class="vspace"></div>
+  <h1 class="ion-text-center texto-60" 
+    style="font-weight: 800; font-size: 32px;">
+    Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+  </h1>
+
+  <ion-list lines="none">
+
+    <ion-input 
+      color="danger" 
+      label="Email" 
+      label-placement="stacked" 
+      placeholder="user@email.com" 
+      type="email" 
+      fill="outline"
+      >
+    </ion-input>
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-button color="trocadero" expand="block"  mode="ios">
+      Recuperar Contraseña
+    </ion-button>
+  </ion-list>
+
+
+  
+</ion-content>

@@ -1,0 +1,58 @@
+<ion-content [fullscreen]="true" class="ion-padding" mode="md">
+   <div class="vspace"></div>
+  <div class="vspace"></div>
+  <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+    <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+  </div>
+  
+  <div class="vspace"></div>
+  <h1 class="ion-text-center texto-60" 
+    style="font-weight: 800; font-size: 32px;">
+    Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+  </h1>
+
+  <ion-list lines="none">
+
+    <ion-input 
+    color="trocadero"
+      label="Email" 
+      label-placement="stacked" 
+      placeholder="user@email.com" 
+      type="email" 
+      fill="outline"
+      [(ngModel)]="email"
+      >
+      <i class='bx bx-envelope' slot="start"></i>
+    </ion-input>
+
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+
+    <ion-input 
+      color="trocadero"
+      label="Password" 
+      label-placement="stacked" 
+      placeholder="******" 
+      type="{{ mostrarContrasena ? 'text' : 'password' }}" 
+      fill="outline"
+      [(ngModel)]="mipassword"
+      >
+      <i class='bx bx-lock-open' slot="start"></i>
+      <ion-icon name="eye" (click)="mostrarContrasena = !mostrarContrasena" slot="end"></ion-icon>
+    </ion-input>
+
+
+    <div class="vspace"></div> <!--espacio de 24px de alto-->
+
+    <ion-button color="trocadero" expand="block" (click)="IniciarSesion()" mode="ios">
+      Iniciar Sesion
+    </ion-button>
+  </ion-list>
+
+  <div class="vspace"></div> <!--espacio de 24px de alto-->
+  <div class="vspace"></div> <!--espacio de 24px de alto-->
+  <p class="ion-text-center">No tienes cuenta? <strong routerLink="/registrarse">Registrate</strong></p>
+
+
+</ion-content>

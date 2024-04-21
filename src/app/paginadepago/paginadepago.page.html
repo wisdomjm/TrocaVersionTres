@@ -1,0 +1,53 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <!--ion-title>paginadepago</ion-title-->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div id="contenido">
+      <div class="vspace"></div>
+      <div style="display: flex; margin: 10px auto; justify-content: center; align-items: center;">
+        <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 72px; height: 72px; border-radius: 8px 8px 8px 8px;">
+      </div>
+          
+      <h1 class="ion-text-center texto-60" 
+        style="font-weight: 800; font-size: 32px;">
+        Trocadero<span style="font-size: 52px; color: #673BB7;">S</span>hop
+      </h1>
+
+      <!--producto a pagar-->
+      <div style="box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;" class="ion-padding">
+
+
+        <div class="vspace"></div>
+        <img src="{{productoActual.imagenes}}" alt="" style="width: 100%; height: 180px; object-fit: cover;">
+        <h1>{{productoActual.nombre}}</h1>
+        <p style="margin-top: -10px;">{{productoActual.descripcionCorta}}</p>
+        <p style="margin-top: -10px; font-size: 8px;">{{productoActual.idVendedor}}</p>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="6"><h1 style="font-size: 10px;">Precio</h1></ion-col>
+            <ion-col size="6"><h1 style="font-size: 10px;">Cantidad</h1></ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">${{productoActual.precio}}</ion-col>
+            <ion-col size="6">x{{productoActual.cantidadDisponible}}</ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </div>
+
+      <div class="vspace"></div>
+  </div>
+  
+  <ion-list class="ion-padding">
+    <div id="paypal-buttons"></div>
+    <script>
+      paypal.Buttons().render("body");
+    </script>
+  </ion-list>
+</ion-content>

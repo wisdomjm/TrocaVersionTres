@@ -1,0 +1,47 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding animate__animated animate__backInDown">
+  <div class="vspace"></div> <!--espacio de 24px de alto-->
+  <ion-label>Productos</ion-label>
+
+  <ion-list lines="none">
+    <ion-grid *ngFor="let producto of productosEnHistorial" class="box-shadow">
+      <ion-row>
+        <ion-col size="3">
+          <img alt="imagen" 
+            src="{{producto.imagenes}}" 
+            style="width: 72px; height: 80px; object-fit: cover; border-radius: 8px 8px 8px 8px;"  
+          />
+        </ion-col>
+        
+        <ion-col size="9">
+          <h1 
+            style="font-size: 20px; font-weight: 400; margin-top: -2px; display: flex; justify-content: space-between;">{{producto.nombre}}
+          </h1>
+          <p 
+            style="font-size: 12px; font-weight: 100; margin-top: -4px;" >{{producto.categoria}}
+          </p>
+          <h4 
+            style="display: flex; justify-content: space-between; font-size: 12px; font-weight: 200;">${{producto.precio}} 
+            <!--span style="margin-top: -16px;">
+              <ion-chip color="trocadero">Ver</ion-chip>
+            </span-->
+          </h4>
+        </ion-col>
+
+      </ion-row>
+    </ion-grid>
+
+  </ion-list>
+
+  
+
+</ion-content>

@@ -1,0 +1,78 @@
+<ion-app>
+  <ion-router-outlet id="content"></ion-router-outlet>
+  <ion-menu side="start" menuId="first" contentId="content" type="overlay">
+    <ion-header class="ion-no-border">
+    <ion-toolbar color="trocadero">
+      <ion-title>
+        TrocaderoShop
+      </ion-title>
+      <ion-avatar slot="end">
+        <img src="../assets/icon/trocaderologo.jpg" alt="">
+      </ion-avatar>
+    </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <ion-list>  
+        
+
+        <!--Opciones-->
+
+        <!--Perfil de usuario-->
+        <ion-item (click)="PerfilDeUsuario()">
+          <i class='bx bxs-user-pin' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Perfil</ion-label>
+        </ion-item>
+        <!--Registrar nuevo Producto-->
+        <ion-item (click)="AgregarProducto()">
+          <i class='bx bxs-layer-plus' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Nuevo producto</ion-label>
+        </ion-item>
+
+          <!--Mapa de productos-->
+          <!--ion-item (click)="MapaProducto()">
+            <i class='bx bx-globe' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+            <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Productos Cercanos</ion-label>
+          </ion-item-->
+        <!--Mostrar Productos del Vendedor-->
+        <ion-item (click)="MisProducto()">
+          <i class='bx bxs-store' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Mis productos</ion-label>
+        </ion-item>
+        <!--Mostrar Historial de Compras <i class='bx bxs-shopping-bags'></i>-->
+        <ion-item (click)="HistorialProductos()">
+          <i class='bx bxs-shopping-bags' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Historial</ion-label>
+        </ion-item>
+        <!--Notificacione-->
+        <ion-item (click)="Notificaciones()">
+          <i class='bx bxs-bell' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Notificaciones</ion-label>
+        </ion-item>
+        <!--Mensajes-->
+        <ion-item  (click)="Mensajes()">
+          <i class='bx bxs-conversation' slot="start" style="color: #673BB7; font-weight: 100; font-size: 22px;"></i>
+          <ion-label style="color: #673BB7; font-weight: 300; font-size: 18px;">Mensajes</ion-label>
+        </ion-item>
+        <!--Historial de Compras-->
+        <!--ion-item routerLink="/perfildeusuario">
+          <i class='bx bx-history' slot="start"></i>
+          <ion-label>Historial</ion-label>
+        </ion-item-->
+
+       
+      
+          
+      </ion-list>
+    </ion-content>
+    <ion-footer class="ion-no-border">
+      <ion-toolbar>
+        <ion-menu-toggle>
+          <ion-item button lines="none" (click)="CerrarSesion()">
+            <ion-icon name="exit-outline" slot="start" color="trocadero" style="color: #673BB7; font-size: 14px;"></ion-icon>
+            <ion-label style="color: #673BB7; font-weight: 300; font-size: 14px;">Logout</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-toolbar>
+    </ion-footer>
+</ion-menu>
+</ion-app>

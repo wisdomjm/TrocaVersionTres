@@ -1,0 +1,33 @@
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar color="trocadero">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    
+    <ion-title>Chat</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding animate__animated animate__backInDown">
+
+  <h1>Clientes</h1>
+  <ion-list>
+    <ion-item [routerLink]="['/enviarmensajealvendedor',usuario.uid]" *ngFor="let usuario of Usuarios">
+      <ion-avatar slot="start">
+        <img src="../../assets/icon/trocaderologo.jpg" alt="" style="width: 42px; height: 42px;">
+      </ion-avatar>
+      <ion-label>
+        <h1 style="font-size: 18px; margin-top: 10px;">{{usuario.email}}</h1>
+        <p style="display: flex; justify-content: space-between;">
+          tiene mensajes <span><i class='bx bx-message-dots btn-send' style="margin-top: -10px;"></i></span>
+        </p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    
+  </ion-toolbar>
+</ion-footer>
